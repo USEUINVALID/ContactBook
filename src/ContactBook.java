@@ -48,11 +48,8 @@ public class ContactBook extends JFrame {
         table.setForeground(Color.BLACK);
         table.setFont(new Font("Arial", Font.PLAIN, 12));
         addButton.setBackground(Color.BLUE);
-        addButton.setForeground(Color.WHITE);
         deleteButton.setBackground(Color.RED);
-        deleteButton.setForeground(Color.WHITE);
         editButton.setBackground(Color.ORANGE);
-        editButton.setForeground(Color.WHITE);
         nameField.setBackground(Color.WHITE);
         nameField.setForeground(Color.BLACK);
         emailField.setBackground(Color.WHITE);
@@ -227,6 +224,11 @@ public class ContactBook extends JFrame {
     }
 
     public static void main(String... args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            System.out.println("Error UI");
+        }
         SwingUtilities.invokeLater(ContactBook::new);
     }
 }
